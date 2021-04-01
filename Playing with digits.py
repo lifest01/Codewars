@@ -1,4 +1,4 @@
-Details:
+'''Details:
 Some numbers have funny properties. For example:
 
 89 --> 8¹ + 9² = 89 * 1
@@ -19,6 +19,7 @@ Note: n and p will always be given as strictly positive integers.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 My solution:
+'''
   def dig_pow(n, p):
     num_digit = len(str(n))
     k=n
