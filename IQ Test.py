@@ -24,3 +24,4 @@ def iq_test(numbers):
         return numbers_list.index(1) + 1
     if numbers_list.count(1) > 1:
         return numbers_list.index(0) + 1
+
