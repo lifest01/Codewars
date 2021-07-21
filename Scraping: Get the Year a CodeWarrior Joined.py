@@ -8,9 +8,9 @@ though because the server may time out.
 
 #Example:
 
->>> get_member_since('dpleshkov')
+get_member_since('dpleshkov')
 Jul 2016
->>> get_member_since('jhoffner')
+get_member_since('jhoffner')
 Oct 2012
 #Libraries/Recommendations:
 
@@ -30,5 +30,12 @@ Feel free to voice your comments and concerns in the discourse area.
 My solution:
 '''
 
+import urllib.request
+from bs4 import BeautifulSoup
+import re
+
+
 def get_member_since(username):
-    pass
+    web = urllib.request.urlopen(f'https://www.codewars.com/users/{username}')
+    soap = BeautifulSoup(web, "html.parser")
+    return (soap.find(string=re.compile("^(?=Sep|Oct|Nov|Dec|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug)")))
